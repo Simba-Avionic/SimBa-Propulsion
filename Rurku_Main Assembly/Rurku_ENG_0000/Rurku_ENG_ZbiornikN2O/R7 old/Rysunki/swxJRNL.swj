@@ -1,0 +1,64 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 02/12/25 by USER
+' *****************************************************************************
+Dim swApp As Object
+
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long, longwarnings As Long
+
+Sub main()
+
+Set swApp = Application.SldWorks
+
+swApp.ActivateDoc2 "R7_ENG_2000rev2 - Arkusz3(2)", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Dim myModelView As Object
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+boolstatus = Part.Extension.SelectByID2("Arkusz3(2)", "SHEET", 0.2507799994407363675, 0.2238029307925508693, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SketchBoxSelect("0.501560", "0.447606", "0.000000", "0.502565", "0.440574", "0.000000")
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 22
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ActivateDoc2 "R7_ENG_2100 - Arkusz1", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 22
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ActivateDoc2 "R7_ENG_2000_S - Arkusz1", False, longstatus
+Set Part = swApp.ActiveDoc
+boolstatus = Part.ActivateView("Widok rysunku5")
+boolstatus = Part.Extension.SelectByID2("Widok rysunku5", "DRAWINGVIEW", 0.09935848893762727618, 0.1994567404317434123, 0, False, 0, Nothing, 0)
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "R7_ENG_2000rev2 - Arkusz3(2)"
+
+' Pan
+Dim swModelView As Object
+Set swModelView = Part.ActiveView
+swModelView.TranslateBy 0.01349999999999999985, -0.02099999999999999784
+
+' Close Document
+swDrawing = Nothing
+Set Part = Nothing
+swApp.CloseDoc "R7_ENG_2100 - Arkusz1"
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.ClearSelection2 True
+swApp.ExitApp
+End Sub

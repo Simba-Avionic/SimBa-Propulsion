@@ -1,0 +1,97 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 04/05/25 by USER
+' *****************************************************************************
+Dim swApp As Object
+
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long, longwarnings As Long
+
+Sub main()
+
+Set swApp = Application.SldWorks
+
+swApp.ActivateDoc2 "Z³o¿enie1.SLDASM", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Dim myModelView As Object
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.1349735715398469593, -0.0880624414576896275
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01636043291392084292, -0.02201561036442240687
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.1390636797683271753, -0.2348331772205056456
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.02045054114240105539, -0.0293541471525632057
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01636043291392084292, -0.0513697575169856091
+
+' Roll View
+Dim swModelView As Object
+Set swModelView = Part.ActiveView
+swModelView.RollBy 0
+boolstatus = Part.Extension.SelectByID2("R7_EGN_3322_Actuator-2@Z³o¿enie1", "COMPONENT", 0, 0, 0, False, 0, Nothing, 0)
+Part.OpenCompFile
+
+' Open
+Set Part = swApp.OpenDoc6("C:\Users\USER\Desktop\Main-Assembly\R7_ENG_0000\FeedSubSystem\R7_EGN_3322_Actuator.SLDASM", 2, 0, "", longstatus, longwarnings)
+Dim swAssembly As Object
+Set swAssembly = Part
+Set Part = swApp.ActiveDoc
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 22
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ActivateDoc2 "R7_EGN_3322_Actuator.SLDASM", False, longstatus
+Set Part = swApp.ActiveDoc
+Part.ClearSelection2 True
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.07362194811264378969, 0.1944795452222257415
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.008180216456960421462, 0.02243994752564143144
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01227032468544063393, 0.02991993003418857641
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.008180216456960421462, 0.01495996501709428821
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.004090108228480210731, 0
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0, 0.007479982508547144103
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01227032468544063393, 0.02243994752564143144
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.02454064937088126785, 0.02991993003418857641
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.008180216456960421462, 0.02243994752564143144
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01227032468544063393, 0.01495996501709428821
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01636043291392084292, 0.03739991254273571791
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01636043291392084292, 0.03739991254273571791
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.02045054114240105539, 0.06731984257692429086
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.02045054114240105539, 0.1121997376282071607
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0.01227032468544063393, 0.09723977261111287074
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0, 0.1495996501709428717
+Set myModelView = Part.ActiveView
+myModelView.RotateAboutCenter 0, 0.1196797201367543056
+
+' Roll View
+Set swModelView = Part.ActiveView
+swModelView.RollBy 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+swApp.ExitApp
+End Sub
